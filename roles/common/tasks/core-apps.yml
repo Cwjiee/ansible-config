@@ -1,0 +1,41 @@
+- name: install basic utils, shells, apps
+  community.general.pacman:
+   name:
+      # - kitty
+      # - git
+    - neovim
+    - tmux
+    - lsd
+    - vim
+    - tree
+    - btop
+    - lazygit
+    - yazi
+    - zoxide
+   state: present
+
+- name: install browser
+  pacman:
+    name:
+      - firefox
+    state: present
+
+- name: Install archival utils
+  pacman:
+    name:
+      - unzip
+      - zip
+      - tar
+    state: present
+
+- name: Install download utils
+  pacman:
+    name:
+      - curl
+      - wget
+    state: present
+
+- name: Install ImageMagick
+  pacman:
+    name: imagemagick
+    state: present

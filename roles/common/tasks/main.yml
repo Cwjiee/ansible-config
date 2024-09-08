@@ -1,0 +1,28 @@
+- name: check updates
+  pacman: 
+   update_cache: yes
+   upgrade: yes
+
+# Configure pacman
+# - include: pacman.yml
+
+# Install core apps
+- include: core_apps.yml
+
+# Install and configure zsh
+- include: zsh.yml
+  when: setup_zsh == True
+
+  # Office
+- include: office.yml
+  when: install_office == True
+
+- include: "{{browser}}.yml"
+
+# AUR apps
+- include: aur.yml
+  when: use_aur == True
+
+# Dotfiles
+- include: dotfiles.yml
+  when: pull_dotfiles == True

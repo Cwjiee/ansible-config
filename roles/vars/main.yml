@@ -1,0 +1,9 @@
+username: weijie
+
+browser: firefox
+
+setup_zsh: true
+
+install_office: false
+
+pull_dotfiles: false

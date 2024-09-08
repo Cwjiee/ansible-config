@@ -1,0 +1,8 @@
+- name: copy kitty conf
+  copy: 
+   src: config/kitty/kitty.conf
+   dest: /home/{{ username }}/.config/kitty/kitty.conf
+   force: False
+   owner: "{{ username }}"
+   group: "{{ username }}"
+   mode: u+rw,g+r,o--
